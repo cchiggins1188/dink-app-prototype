@@ -1,0 +1,106 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+function DinkAppPrototype() {
+  const [step, setStep] = useState("welcome");
+
+  const next = () => {
+    const flow = ["welcome", "signup", "profile", "discovery", "matches", "chat", "settings"];
+    const currentIndex = flow.indexOf(step);
+    if (currentIndex < flow.length - 1) setStep(flow[currentIndex + 1]);
+  };
+
+  return (
+    <div className="p-6 max-w-md mx-auto space-y-4">
+      {/* ... your existing JSX remains here ... */}
+    </div>
+  );
+}
+
+export default function Home() {
+  return <DinkAppPrototype />;
+}
+
+  return (
+    <div className="p-6 max-w-md mx-auto space-y-4">
+      {step === "welcome" && (
+        <Card>
+          <CardContent className="p-4 space-y-4">
+            <h2 className="text-xl font-bold">Make meaningful friendships</h2>
+            <p>With like-minded couples</p>
+            <Button onClick={next}>Sign up</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "signup" && (
+        <Card>
+          <CardContent className="p-4 space-y-4">
+            <h2 className="text-xl font-bold">We do not plan to have kids</h2>
+            <p>Create a couple profile to find new friends.</p>
+            <Button onClick={next}>Continue</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "profile" && (
+        <Card>
+          <CardContent className="p-4 space-y-4">
+            <Input placeholder="Names (e.g. Andrew & Lisa)" />
+            <Input placeholder="Ages (e.g. 28 & 34)" />
+            <Input placeholder="Location" />
+            <Input placeholder="Interests (e.g. Travel, Movies)" />
+            <Textarea placeholder="Fun facts or bio" />
+            <Button onClick={next}>Create Profile</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "discovery" && (
+        <Card>
+          <CardContent className="p-4 space-y-2">
+            <h2 className="font-semibold">Nearby Couples</h2>
+            <div className="border p-2 rounded">Andrew & Lisa - Ages 28 & 34 - Love Travel & Movies</div>
+            <Button onClick={next}>View Matches</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "matches" && (
+        <Card>
+          <CardContent className="p-4 space-y-2">
+            <h2 className="font-semibold">Your Matches</h2>
+            <div>David & Emma</div>
+            <div>Mark & Sarah</div>
+            <Button onClick={next}>Chat</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "chat" && (
+        <Card>
+          <CardContent className="p-4 space-y-4">
+            <h2 className="font-semibold">Chat with David & Emma</h2>
+            <Textarea placeholder="Say hello..." />
+            <Button onClick={next}>Send</Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {step === "settings" && (
+        <Card>
+          <CardContent className="p-4 space-y-2">
+            <h2 className="font-semibold">Settings</h2>
+            <div>Edit Profile</div>
+            <div>Preferences</div>
+            <div>Notifications</div>
+            <div>Privacy</div>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
