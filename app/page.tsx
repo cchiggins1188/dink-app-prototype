@@ -46,6 +46,7 @@ function DinkAppPrototype() {
   ];
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
     const files = Array.from(e.target.files);
     if (files.length > 10) return alert("Upload up to 10 photos only.");
     setPhotos(files);
