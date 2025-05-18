@@ -15,7 +15,7 @@ function DinkAppPrototype() {
   const [partner2, setPartner2] = useState("");
   const [age1, setAge1] = useState("");
   const [age2, setAge2] = useState("");
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState<File[]>([]);
   const [relationshipDuration, setRelationshipDuration] = useState("");
   const [lifestyleChoices, setLifestyleChoices] = useState({ earlyRisers: false, socialDrinkers: false, petParents: false });
   const [activityPrefs, setActivityPrefs] = useState({ travel: false, diningOut: false, gameNights: false, outdoorAdventures: false });
