@@ -69,7 +69,7 @@ function DinkAppPrototype() {
     setCurrentProfileIndex(prevIndex);
   };
 
-  const handleDragEnd = (_, info) => {
+  const handleDragEnd = (_: unknown, info: { offset: { x: number } }) => {
     const offset = info.offset.x;
     if (offset > 100) {
       setSwipeDirection("right");
