@@ -20,8 +20,8 @@ function DinkAppPrototype() {
   const [lifestyleChoices, setLifestyleChoices] = useState({ earlyRisers: false, socialDrinkers: false, petParents: false });
   const [activityPrefs, setActivityPrefs] = useState({ travel: false, diningOut: false, gameNights: false, outdoorAdventures: false });
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
-  const [swipedHistory, setSwipedHistory] = useState([]);
- const [likedProfiles, setLikedProfiles] = useState<
+  const [swipedHistory, setSwipedHistory] = useState<number[]>([]);
+  const [likedProfiles, setLikedProfiles] = useState<
   { names: string; score: number; image: string; bio: string }[]
 >([]);
   const [swipeDirection, setSwipeDirection] = useState(null);
