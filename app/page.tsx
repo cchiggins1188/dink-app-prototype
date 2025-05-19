@@ -63,6 +63,8 @@ function DinkAppPrototype() {
   const handleUndo = () => {
     if (!swipedHistory.length) return;
     const prevIndex = swipedHistory.pop();
+    if (prevIndex === undefined) return;
+    setCurrentProfileIndex(prevIndex);
     setSwipedHistory([...swipedHistory]);
     setCurrentProfileIndex(prevIndex);
   };
