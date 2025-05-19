@@ -52,7 +52,7 @@ function DinkAppPrototype() {
     setPhotos(files);
   };
 
-  const handleSwipe = (direction) => {
+  const handleSwipe = (direction: "like" | "skip") => {
     if (direction === "like") setLikedProfiles((prev) => [...prev, sortedProfiles[currentProfileIndex]]);
     setSwipedHistory((prev) => [...prev, currentProfileIndex]);
     setCurrentProfileIndex((prev) => prev + 1);
