@@ -24,7 +24,7 @@ function DinkAppPrototype() {
   const [likedProfiles, setLikedProfiles] = useState<
   { names: string; score: number; image: string; bio: string }[]
 >([]);
-  const [swipeDirection, setSwipeDirection] = useState(null);
+  const [swipeDirection, setSwipeDirection] = useState<"left" | "right" | null>(null);
 
   const sortedProfiles = [
     {
