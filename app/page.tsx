@@ -9,8 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 function DinkAppPrototype() {
   const [step, setStep] = useState("welcome");
-  const [isInCouple, setIsInCouple] = useState(null);
-  const [isDink, setIsDink] = useState(null);
+  const [isInCouple, setIsInCouple] = useState<boolean | null>(null);
+  const [isDink, setIsDink] = useState<boolean | null>(null);
   const [partner1, setPartner1] = useState("");
   const [partner2, setPartner2] = useState("");
   const [age1, setAge1] = useState("");
